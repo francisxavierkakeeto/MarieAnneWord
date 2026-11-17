@@ -1,0 +1,137 @@
+/* Extra styles for services, about, gallery and contact pages. Load after lulu.css */
+.page-banner {
+  padding: 2.5rem 1rem;
+  text-align: center;
+}
+.page-banner h2 {
+  margin: 0;
+}
+.welcome-section h3 {
+  margin-top: 2rem;
+}
+.six {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  padding: 20px;
+}
+
+.welcome-section {
+  position: relative;
+}
+.welcome-section .note {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin: 1.75rem 0;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.gallery-grid figure {
+  margin: 0;
+}
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+.gallery-grid figcaption {
+  padding: 0.4rem 0;
+  font-size: 0.9rem;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  text-align: left;
+}
+
+.features-grid1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.feature-card1 {
+  background: linear-gradient(rgba(0, 0, 0, 0.45)), rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(27, 73, 101, 0.04);
+  border-top: 4px solid var(--light-blue);
+  color: var(--white);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+  font-weight: 600;
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  display: block;
+}
+.feature-card {
+  padding: 0;
+  overflow: hidden;
+}
+.feature-card figure {
+  margin: 0;
+}
+.feature-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+.feature-card figcaption,
+.feature-card p {
+  padding: 0.4rem 0;
+  font-size: 0.9rem;
+}
+.feature-card h4 {
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.booking-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-weight: 600;
+}
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  padding: 0.6rem;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font: inherit;
+}
+.booking-form button {
+  align-self: flex-start;
+  border: 0;
+  cursor: pointer;
+}
+.map {
+  width: 100%;
+  height: 320px;
+  border: 0;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+@media (max-width: 700px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}

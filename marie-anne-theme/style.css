@@ -1,0 +1,348 @@
+/*
+Theme Name: Marie Anne Wellness Center
+Description: Custom theme converted from the original HTML/CSS site.
+Version: 1.4
+Author: Kakeeto
+*/
+
+:root {
+  --primary-blue: #1b4965;
+  --light-blue: #62b6cb;
+  --accent-sky: #cae9ff;
+  --dark-neutral: #1d3557;
+  --light-bg: #f0f7f9;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Cambria", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  color: var(--dark-neutral);
+  background-color: var(--white);
+  line-height: 1.6;
+}
+
+/* Header & Logo */
+.site-header {
+  background-color: var(--white);
+  box-shadow: 0 2px 4px rgba(27, 73, 101, 0.08);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-monogram {
+  width: 120px;
+  height: 95px;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-blue);
+  background-size: cover;
+  border-radius: 25px;
+}
+
+.logo-monogram img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.logo-text h1 {
+  font-size: 1.25rem;
+  color: var(--primary-blue);
+}
+
+.logo-text p {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.search-bar {
+  display: flex;
+  gap: 5px;
+}
+
+.search-bar input {
+  padding: 6px 12px;
+  border: 1px solid #b8d0e0;
+  border-radius: 4px;
+}
+
+.search-bar button {
+  padding: 6px 12px;
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Navigation */
+.main-nav {
+  background-color: var(--primary-blue);
+}
+
+.main-nav ul {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  list-style: none;
+}
+
+.main-nav li a {
+  display: block;
+  padding: 12px 20px;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+.main-nav li a:hover,
+.main-nav li a.active {
+  background-color: var(--light-blue);
+}
+
+/* Hero Section */
+.hero {
+  background:
+    linear-gradient(rgba(27, 73, 101, 0.88), rgba(27, 73, 101, 0.88)),
+    center/cover;
+  position: relative;
+  min-height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  padding: 20px;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  padding: 20px;
+}
+
+.btn-cta {
+  display: inline-block;
+  background-color: var(--light-blue);
+  color: var(--white);
+  padding: 12px 25px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.btn-cta:hover {
+  background-color: #4fa3b8;
+}
+
+/* Hero Slider Container */
+.hero-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero-slider::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* Slider wrapper */
+.slider-placeholder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Individual Slide Styling */
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: heroFade 28s infinite; /* 7 images * 4s each = 28s total loop */
+}
+
+/* Image scaling and fit */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures images fill the box nicely without stretching */
+  display: block;
+}
+
+/* Staggering the animation timing for each slide */
+.slide:nth-child(1) {
+  animation-delay: 0s;
+}
+.slide:nth-child(2) {
+  animation-delay: 4s;
+}
+.slide:nth-child(3) {
+  animation-delay: 8s;
+}
+.slide:nth-child(4) {
+  animation-delay: 12s;
+}
+.slide:nth-child(5) {
+  animation-delay: 16s;
+}
+.slide:nth-child(6) {
+  animation-delay: 20s;
+}
+.slide:nth-child(7) {
+  animation-delay: 24s;
+}
+
+/* Smooth Fade Keyframes */
+@keyframes heroFade {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  } /* Quick fade-in */
+  15% {
+    opacity: 1;
+  } /* Hold image visible */
+  20% {
+    opacity: 0;
+  } /* Fade-out */
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Welcome Section & Features CSS Grid */
+.welcome-section {
+  padding: 60px 20px;
+  background-color: var(--light-bg);
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.welcome-section h3 {
+  color: var(--primary-blue);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.welcome-section > .container > p {
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  color: #444;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.feature-card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(27, 73, 101, 0.04);
+  border-top: 4px solid var(--light-blue);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.feature-card h4 {
+  color: var(--primary-blue);
+  margin-bottom: 10px;
+}
+
+/* Quick Info Bar */
+.info-bar {
+  background-color: var(--light-blue);
+  color: var(--white);
+  padding: 20px;
+}
+
+.info-flex {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-weight: 500;
+}
+
+/* Footer Grid */
+.site-footer {
+  background-color: var(--dark-neutral);
+  color: var(--white);
+  padding: 40px 20px 20px 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-col h4 {
+  margin-bottom: 15px;
+  color: var(--accent-sky);
+}
+
+.footer-col a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  font-size: 0.85rem;
+  color: #b0c4de;
+}
